@@ -1,0 +1,33 @@
+Text display (items, score)
+Sound
+Menu
+Settings
+AI
+Map file
+Config file for game constants
+Merge explosion graphics (new explosions should not overlap existing ones).
+Float animation speed
+Improve player move (should be able to go between two obstacles when close to the opening)
+
+Game constants
+  The game constants (player life, max speed, bomb timer, etc.) should be stored in a configuration file and loaded when the game launches.
+
+AssetManger
+  The AssetManager is ugly right now. This is normal as it was not a priority.
+  The Assets should be stored in some kind of collection, indexed by keys associated to the assets,
+  and loaded using a metadata file storing the assets information (position and size in the sprite sheet).
+
+Draw order
+  We need a nice way to order the draw calls.
+  Having a z index based on game object type fixes some problems but no all of them.
+  For example, player 2 will always appear in front of player 1.
+
+
+-- Bugs --
+
+
+-- Thoughts --
+
+Should the game keep collections of certain types of object in addition to the 'everything' collection ?
+This would reduce the amount of processing done in some places (pick items, collisions, etc.),
+but will increase the complexity of how we store the objects and may introduce inconsistencies if objects are shared between collections.

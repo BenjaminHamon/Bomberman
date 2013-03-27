@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5A96278A-438A-4B15-BC47-D0D8EA320FBC}</ProjectGuid>
+    <RootNamespace>Bomberman</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SdlDir)\include;$(SdlMixerDir)\include;$(SdlImageDir)\include;$(VisualLeakDetectorDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SdlDir)\lib\x86;$(SdlMixerDir)\lib\x86;$(SdlImageDir)\lib\x86;$(VisualLeakDetectorDir)\lib\Win32</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SdlDir)\include;$(SdlMixerDir)\include;$(SdlImageDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SdlDir)\lib\x86;$(SdlMixerDir)\lib\x86;$(SdlImageDir)\lib\x86</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\GameObjects\Box.cpp" />
+    <ClCompile Include="Src\GameObjects\ExplosionPart.cpp" />
+    <ClCompile Include="Src\GameObjects\Obstacle.cpp" />
+    <ClCompile Include="Src\Graphics\AnimatedGraphicsComponent.cpp" />
+    <ClCompile Include="Src\Graphics\AnimatedSprite.cpp" />
+    <ClCompile Include="Src\AppException.cpp" />
+    <ClCompile Include="Src\Graphics\AssetManager.cpp" />
+    <ClCompile Include="Src\GameObjects\Bomb.cpp" />
+    <ClCompile Include="Src\GameObjects\Explosion.cpp" />
+    <ClCompile Include="Src\Graphics\ExplosionGraphicsComponent.cpp" />
+    <ClCompile Include="Src\Graphics\PlayerGraphicsComponent.cpp" />
+    <ClCompile Include="Src\Main\Game.cpp" />
+    <ClCompile Include="Src\GameObjects\GameObject.cpp" />
+    <ClCompile Include="Src\Graphics\GraphicsComponent.cpp" />
+    <ClCompile Include="Src\Graphics\GraphicsManager.cpp" />
+    <ClCompile Include="Src\Input\Input.cpp" />
+    <ClCompile Include="Src\GameObjects\Item.cpp" />
+    <ClCompile Include="Src\Main\GameObjectVisitor.cpp" />
+    <ClCompile Include="Src\Main\Main.cpp" />
+    <ClCompile Include="Src\GameObjects\Map.cpp" />
+    <ClCompile Include="Src\GameObjects\MapCell.cpp" />
+    <ClCompile Include="Src\GameObjects\Player.cpp" />
+    <ClCompile Include="Src\Main\UpdateVisitor.cpp" />
+    <ClCompile Include="Src\Rectangle.cpp" />
+    <ClCompile Include="Src\Graphics\Sprite.cpp" />
+    <ClCompile Include="Src\Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\GameObjects\Box.h" />
+    <ClInclude Include="Src\GameObjects\ExplosionPart.h" />
+    <ClInclude Include="Src\GameObjects\Obstacle.h" />
+    <ClInclude Include="Src\Graphics\AnimatedGraphicsComponent.h" />
+    <ClInclude Include="Src\Graphics\AnimatedSprite.h" />
+    <ClInclude Include="Src\AppException.h" />
+    <ClInclude Include="Src\Graphics\AssetManager.h" />
+    <ClInclude Include="Src\GameObjects\Bomb.h" />
+    <ClInclude Include="Src\GameObjects\Explosion.h" />
+    <ClInclude Include="Src\Graphics\ExplosionGraphicsComponent.h" />
+    <ClInclude Include="Src\Graphics\PlayerGraphicsComponent.h" />
+    <ClInclude Include="Src\Input\InputBindings.h" />
+    <ClInclude Include="Src\Input\PlayerAction.h" />
+    <ClInclude Include="Src\Main\Game.h" />
+    <ClInclude Include="Src\GameObjects\GameObject.h" />
+    <ClInclude Include="Src\Graphics\GraphicsComponent.h" />
+    <ClInclude Include="Src\Graphics\GraphicsManager.h" />
+    <ClInclude Include="Src\Input\Input.h" />
+    <ClInclude Include="Src\Input\InputKey.h" />
+    <ClInclude Include="Src\GameObjects\Item.h" />
+    <ClInclude Include="Src\GameObjects\ItemType.h" />
+    <ClInclude Include="Src\GameObjects\Map.h" />
+    <ClInclude Include="Src\GameObjects\MapCell.h" />
+    <ClInclude Include="Src\GameObjects\MoveDirection.h" />
+    <ClInclude Include="Src\GameObjects\Player.h" />
+    <ClInclude Include="Src\Main\GameObjectVisitor.h" />
+    <ClInclude Include="Src\Main\UpdateVisitor.h" />
+    <ClInclude Include="Src\Rectangle.h" />
+    <ClInclude Include="Src\Graphics\Sprite.h" />
+    <ClInclude Include="Src\Graphics\SpriteIndex.h" />
+    <ClInclude Include="Src\Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="ToDo.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
